@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+	<meta name="author" content="Phoenix the Creative Studio">
+	<meta name="description" content="At Lawrence Boone Selections we discover and import the finest wines, from those of the most renowned wine regions in the world to those of the must obscure.">
+	<meta name="keywords" content="Larry Boone, Boone Selections, Lawrence Boone, sommelier, wine, import, spain, empordalia, sota els angels, sota els angels 2008, desea, desea 2009, balmeta, balmeta 2013, delaware, wine selections, terroir, vineyard, virginia">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<title>Deshowy design</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body class=" layout-wines  layout-visited">
+	<div id="loading-mask-home">
+		<div class="bg"></div>
+		<div id="loading-mask-logo">
+			<img src="images/layout/loading-mask_logo-anim.png" alt="" data-frame-size="175|175" data-frame-nb="110" />
+		</div>
+	</div>
+
+	<div id="loading-mask-normal">
+		<div class="bg"></div>
+		<div class="fg"></div>
+	</div>
+
+	<div id="wrapper" class="skin-dark">
+
+		<!-- Header -->
+		<a href="index.html" id="header-logo">
+			<div class="top"></div>
+			<div class="bottom"></div>
+		</a>
+		<header>
+			<div>
+				<a  class="btn-toggle"><span></span><span></span><span></span><span></span></a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="about">О нас</a></li>
+						<li class="active"><a href="wines-and-producers">Продукция</a></li>
+						<li><a href="trade">Торговля</a></li>
+						<li><a href="contact">Контакты</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>	
+	<section id="section-wine">
+
+		<!-- Content - Center -->
+		<div class="content-centered">
+
+			<!-- Header -->
+			<div class="top-links">
+				<div>
+					<h3>Предыдущий</h3>
+					<a href="wine_balmeta-2013">Balmeta 2013</a>
+				</div>
+				<div>
+					<h3>Следующий</h3>
+					<a href="wine_desea-2009">Desea 2009</a>
+				</div>
+			</div>
+			<h1 class="to-load"><span class="line"><span>Sota Els</span></span> <span class="line"><span>Àngels</span></span> <span class="line"><span>2008</span></span> <div class="waves"></div></h1>
+
+			<!-- Block - Description -->
+			<div class="block-description to-load-block">
+				<div class="links">
+					<div>
+						<h2>Производитель</h2>
+						<a href="producer_sota-els-angels">Sota Els Àngels</a>
+					</div>
+					<div>
+						<h2>Регион</h2>
+						<span>Empordà, Spain</span>
+					</div>
+				</div>
+				<p>Эти земли расположены в гористой местности, где часто дует ветер 'трамунтана', но редко идут дожди, где в воздухе чувствуется морская соль, где можно полюбоваться первыми лучами солнца, и где работа начинается еще затемно.</p>
+			</div>
+
+			<!-- Block - Icons -->
+			<div class="block-icons to-load-block">
+				<ul>
+					<li class="year">
+						<div class="icon"></div>
+						<h3>2008</h3>
+					</li>
+					<li class="color">
+						<div class="icon"></div>
+						<h3>Redwine</h3>
+					</li>
+					<li class="quantity">
+						<div class="icon"></div>
+						<h3>750ml</h3>
+					</li>
+					<li class="alcohol">
+						<div class="icon"></div>
+						<h3>14.2%</h3>
+					</li>
+				</ul>
+			</div> 
+
+			<!-- Block - Image Mobile -->
+			<div class="block-image-mobile to-load-block">
+				<img src="images/wine/sota-els-angels-2008-mobile.jpg" alt="" />
+			</div>
+
+			<!-- Block - Table -->
+			<div class="block-table to-load-block">
+				<div class="row">
+					<div class="cell third"><span>Закупорка : пробка</span><span>Алкоголь : 13.8% vol</span></div>
+					<div class="cell twothirds"><span>Дегустационные характеристики Демонстрирует глубокий темно-рубиновый цвет. Приятный, чуть сладковатый аромат с тонами пьяной вишни, зрелого кизила, зеленого и черного перца, свежей древесины дуба и ванили. Округлое, с танинами, требующими как минимум 3 лет выдержки. Вкус полный, с выраженной кислотностью, преобладающими оттенками зрелой вишни и обожженной древесины. Потенциал выдержки: 5-7 лет.</span></div>
+				</div>
+
+				<div class="row">
+					<div class="cell"><span>Характеристики</span></div>
+				</div>
+
+				<div class="row">
+					<div class="cell half"><span>Характеристики</span></div>
+					<div class="cell half"><span>Характеристики</span></div>
+				</div>
+
+				<div class="row">
+					<div class="cell twothirds"><span>Характеристики</span></div>
+					<div class="cell third"><span>Характеристики</span></div>
+				</div>
+
+				<div class="row">
+					<div class="cell half"><span>Характеристики</span></div>
+					<div class="cell fourth"><span>Характеристики</span></div>
+					<div class="cell fourth"><span>Характеристики</span></div>
+				</div>
+			</div>
+
+			<!-- Block - Producer -->
+			<div class="block-producer">
+				<a href="producer_sota-els-angels" class="btn-cta">
+					<span class="icon"></span>
+					<span class="text">Оцените<br/>Наш выбор</span>
+				</a>
+
+				<div class="svg stamp no-intro" data-speed="25">
+					<div>
+						<div class="stamp-core">
+							<svg version="1.1" id="svg_stamp" viewBox="0 0 254 188" enable-background="new 0 0 254 188">
+	<path fill="none" stroke="#322F30" stroke-width="0.75" stroke-miterlimit="10" d="M209.1,186H222c0.3-5.4,4.2-9.7,9-9.7
+		c4.8,0,8.7,4.3,9,9.7H252v-9.8c-0.5,0.1-1,0.1-1.5,0.1c-5.7,0-10.4-4-10.4-9c0-5,4.6-9,10.4-9c0.5,0,1,0,1.5,0.1v-12.1
+		c-0.5,0.1-1,0.1-1.5,0.1c-5.7,0-10.4-4-10.4-9c0-5,4.6-9,10.4-9c0.5,0,1,0,1.5,0.1v-9.5c-0.5,0.1-1,0.1-1.5,0.1
+		c-5.7,0-10.4-4-10.4-9c0-5,4.6-9,10.4-9c0.5,0,1,0,1.5,0.1V88.9c-0.5,0.1-1,0.1-1.5,0.1c-5.7,0-10.4-4-10.4-9c0-5,4.6-9,10.4-9
+		c0.5,0,1,0,1.5,0.1V60.7c-0.4,0-0.7,0.1-1.1,0.1c-5.7,0-10.4-4-10.4-9c0-5,4.6-9,10.4-9c0.4,0,0.7,0,1.1,0.1v-12
+		c-0.4,0-0.7,0.1-1.1,0.1c-5.7,0-10.4-4-10.4-9c0-5,4.6-9,10.4-9c0.4,0,0.7,0,1.1,0.1V1.2h-12c-0.5,5.2-4.3,9.3-9,9.3
+		c-4.7,0-8.5-4.1-9-9.3h-12"/>
+	<path fill="none" stroke="#322F30" stroke-width="0.75" stroke-miterlimit="10" d="M209.1,186"/>
+	<path fill="none" stroke="#322F30" stroke-width="0.75" stroke-miterlimit="10" d="M210,1.2h-1.8c-0.5,5.2-4.3,9.3-9,9.3
+		c-4.7,0-8.5-4.1-9-9.3h-10.7c-0.5,5.2-4.3,9.3-9,9.3c-4.7,0-8.5-4.1-9-9.3h-12c-0.5,5.2-4.3,9.3-9,9.3c-4.7,0-8.5-4.1-9-9.3h-10.2
+		c-0.5,5.2-4.3,9.3-9,9.3c-4.7,0-8.5-4.1-9-9.3h-12c-0.5,5.2-4.3,9.3-9,9.3c-4.7,0-8.5-4.1-9-9.3H62.2c-0.8,4.8-4.5,8.4-8.9,8.4
+		c-4.4,0-8.1-3.6-8.9-8.4H32.2c-0.8,4.8-4.5,8.4-8.9,8.4S15.2,6,14.4,1.2h-13v10.7c5,0.7,8.8,4.4,8.8,8.9c0,4.5-3.8,8.3-8.8,8.9
+		v12.1c5,0.7,8.8,4.4,8.8,8.9c0,4.5-3.8,8.3-8.8,8.9v10.4c4.8,0.8,8.4,4.5,8.4,8.9s-3.6,8.1-8.4,8.9v12.2c4.8,0.8,8.4,4.5,8.4,8.9
+		s-3.6,8.1-8.4,8.9v9.6c4.8,0.8,8.4,4.5,8.4,8.9c0,4.4-3.6,8.1-8.4,8.9v12.2c4.8,0.8,8.4,4.5,8.4,8.9c0,4.4-3.6,8.1-8.4,8.9V186
+		h14.3c0.8-4.8,4.5-8.4,8.9-8.4c4.4,0,8.1,3.6,8.9,8.4h11.2c0.3-5.4,4.2-9.7,9-9.7c4.8,0,8.7,4.3,9,9.7h11.1c0.5-5.2,4.3-9.3,9-9.3
+		c4.7,0,8.5,4.1,9,9.3h9.3c0-0.2,0-0.4,0-0.7c0-5.7,4-10.4,9-10.4c5,0,9,4.6,9,10.4c0,0.2,0,0.4,0,0.7h11.5c0.5-5.2,4.3-9.3,9-9.3
+		c4.7,0,8.5,4.1,9,9.3h12.5c0.7-5,4.4-8.8,8.9-8.8c4.5,0,8.3,3.8,8.9,8.8h12c0.3-5.4,4.2-9.7,9-9.7c4.8,0,8.7,4.3,9,9.7"/>
+	<path fill="none" stroke="#322F30" stroke-width="0.75" stroke-miterlimit="10" d="M210,1.2"/>
+</svg>
+							<div class="text">КАЧЕСТВЕННОЕ<br/>ВИНО<br/>ИЗ ИСПАНИИ</div>
+						</div>
+						<div class="stamp-waves"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Loose SVGs -->
+			<div id="loose-svgs">
+				<div class="svg wine-glass-empty" data-speed="25"><div><svg version="1.1" id="svg_wine-glass-empty" viewBox="0 0 96 134" enable-background="new 0 0 96 134">
+	<path fill="none" stroke="#322F30" stroke-width="0.75" stroke-miterlimit="10" d="M58.4,1.2C32.7,30,19,63.5,44.6,75.5
+		s43-13.3,49.5-57.7L58.4,1.2z"/>
+	<line fill="none" stroke="#322F30" stroke-width="0.75" stroke-miterlimit="10" x1="25" y1="119.6" x2="45.4" y2="75.9"/>
+	<ellipse transform="matrix(0.9062 0.4228 -0.4228 0.9062 53.1662 0.8325)" fill="none" stroke="#322F30" stroke-width="0.75" stroke-miterlimit="10" cx="24.7" cy="120.3" rx="25.7" ry="6.4"/>
+	<line class="liquid" fill="none" stroke="#231F20" stroke-width="0.75" stroke-miterlimit="10" x1="88.7" y1="41.9" x2="32.7" y2="41.9"/>
+</svg></div></div>
+				<div class="svg arch" data-speed="35"><div><svg version="1.1" id="svg_arch" viewBox="0 0 110 110" enable-background="new 0 0 110 110">
+	<path fill="none" stroke="#322F30" stroke-width="13" stroke-miterlimit="10" d="M1.3,7.5c55.6,0,100.7,45.1,100.7,100.7"/>
+</svg></div></div>
+			</div>
+
+		</div>
+
+		<!-- Content Right -->
+		<div class="content-right closed">
+			<div id="slider-container-right">
+				<ul class="slider-controls"></ul>
+				
+				<ul class="slider-arrows">
+					<li class="previous"><a href="wine_sota-els-angels-2008">Previous</a></li>
+					<li class="count"></li>
+					<li class="next"><a href="wine_sota-els-angels-2008">Next</a></li>
+				</ul>
+
+				<div class="slider">					
+					<ul>
+						<li style="background: url(images/wine/sota-els-angels-2008.jpg) no-repeat center center;"></li>
+					</ul>
+
+					<div class="cursor"></div>
+				</div>
+			</div>
+		</div>
+		<div class="content-right-overlay"></div>
+
+	</section>
+
+		<!-- Footer -->
+		<footer class="to-load">
+			<ul class="socials">
+				<li class="bullet"></li>
+				<li class="icon facebook"><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+				<li class="bullet"></li>
+				<li class="icon instagram"><a href="https://instagram.com" target="_blank">Instagram</a></li>
+				<li class="bullet"></li>
+			</ul>
+			<p class="copyright"><span>Deshowy design<!--/--> </span><!--<span>Created by <a href="http://phoenix.cool" target="_blank">Phoenix, the Creative Studio</a></span>--></p>
+			<a  class="btn-top">
+				<span class="icon"></span>
+				<span class="text">вверх</span>
+			</a>
+		</footer>
+
+	</div>
+
+	<script type="text/javascript" src="javascript/plugins.js"></script>
+	<script type="text/javascript" src="javascript/infiniteSlider.js"></script>
+	<script type="text/javascript" src="javascript/ui.js"></script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-70967866-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d088d14224","applicationID":"10145360","transactionName":"NVFRZUdUDBdTUUZcCwwbZkNcGhUNXFdtRgsWVR5UWUZPBVxVV1kXTwYDAQ0bEgxC","queueTime":0,"applicationTime":6,"atts":"GRZSEw9OHxk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
